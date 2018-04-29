@@ -6,7 +6,8 @@ var hero1 = {name :'dimos', heroic : true, inventory : [{type: 'sword2', damage:
 // rest, pickUpItem, dealDamage, equipWeapon, doBattle
 function rest(creature) {
   creature.health = 10 ;
-  return creature
+  return creature ;
+  console.log('Your hero has rested for the night. His health is restored to 100%')
 }
 
 function pickUpItem(creature, item) {
@@ -42,7 +43,12 @@ function doBattle(heroicCreature, creature) {
   else {
     Window.alert('Your Hero has died')
   }
-} 
+}
+
+$(document).ready(function() {
+  console.log("document ready");
+  $("#bed").click(hero, rest);
+});
 
 
 // UI
